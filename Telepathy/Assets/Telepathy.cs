@@ -166,7 +166,6 @@ public class Telepathy : MonoBehaviour {
                                                                                                                                                                                                   return;
                                                                                                                                                                                                 }
                                                                                                                                                                                                 for (int i = 0; i < 24; i++) {
-                                                                                                                                                                                                  Debug.Log(Help[i][0].ToString());
                                                                                                                                                                                                   int Temp = (UsedSymbols[int.Parse(Help[i][0].ToString())] / 18) * 18 + (UsedSymbols[int.Parse(Help[i][1].ToString())] % 18);
                                                                                                                                                                                                   if (Grid[UsedSymbols[int.Parse(Help[i][2].ToString())] / 18][UsedSymbols[int.Parse(Help[i][2].ToString())] % 18] / 10 == Grid[Temp / 18][Temp % 18] / 10) {
                                                                                                                                                                                                     if (Grid[UsedSymbols[int.Parse(Help[i][3].ToString())] / 18][UsedSymbols[int.Parse(Help[i][3].ToString())] % 18] % 10 == Grid[Temp / 18][Temp % 18] % 10) {
@@ -311,7 +310,6 @@ public class Telepathy : MonoBehaviour {
           default:
           yield return "sendtochaterror Speak bitch, I can't read your mind!";
           yield break;
-          break;
         }
       }
       else {
