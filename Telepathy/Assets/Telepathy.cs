@@ -313,12 +313,13 @@ public class Telepathy : MonoBehaviour {
         }
       }
       else {
+        #region Colors
         if (Parameters[0] == "BLUE")
           while (ColorIndex != 0) {
             Move[2].OnInteract();
             yield return new WaitForSecondsRealtime(.1f);
           }
-        else if (Parameters[0] == "PINK")
+        else if (Parameters[0] == "PINK" || Parameters[0] == "MAGENTA")
           while (ColorIndex != 1) {
             Move[2].OnInteract();
             yield return new WaitForSecondsRealtime(.1f);
@@ -358,6 +359,11 @@ public class Telepathy : MonoBehaviour {
             Move[2].OnInteract();
             yield return new WaitForSecondsRealtime(.1f);
           }
+        else {
+          yield return "sendtochaterror Speak bitch, I can't read your mind!";
+          yield break;
+        } 
+        #endregion
         if (Parameters[1] == "BOLT" || Parameters[1] == "LIGHTNING_BOLT" || Parameters[1] == "LIGHTNING")
           while (Index != 0) {
             Move[1].OnInteract();
