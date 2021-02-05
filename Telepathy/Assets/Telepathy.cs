@@ -46,7 +46,7 @@ public class Telepathy : MonoBehaviour {
     int[][] Grid = new int[][]{
       new int[] {11, 22, 33, 44, 55, 66, 77, 88, 99, 36, 97, 42, 75, 69, 51, 83, 14, 28}, //a
       new int[] {24, 38, 96, 82, 41, 79, 15, 63, 57, 64, 78, 27, 53, 92, 16, 31, 49, 85}, //b
-      new int[] {98, 56, 47, 73, 63, 25, 34, 19, 81, 57, 41, 63, 24, 15, 82, 79, 38, 96}, //c
+      new int[] {98, 56, 47, 73, 62, 25, 34, 19, 81, 57, 41, 63, 24, 15, 82, 79, 38, 96}, //c
       new int[] {46, 87, 61, 29, 13, 94, 58, 35, 72, 23, 39, 54, 67, 86, 95, 48, 71, 12}, //d
       new int[] {67, 71, 12, 95, 39, 48, 86, 54, 23, 99, 55, 88, 11, 77, 44, 66, 22, 33}, //e
       new int[] {32, 93, 59, 68, 84, 17, 21, 76, 45, 81, 62, 19, 98, 34, 73, 25, 56, 47}, //f
@@ -174,6 +174,7 @@ public class Telepathy : MonoBehaviour {
                                                                                                                                                                                                       }
                                                                                                                                                                                                       Debug.LogFormat("[Telepathy #{0}] Shown coordinates are {1}, {2}, {3}, {4}.", moduleId, Coordinates[0].text, Coordinates[1].text, Coordinates[2].text, Coordinates[3].text);
                                                                                                                                                                                                       Debug.LogFormat("[Telepathy #{0}] One possible answer is {1}.", moduleId, Alphabet[Temp / 18] + (Temp % 18 + 1).ToString());
+                                                                                                                                                                                                      Debug.LogFormat("[Telepathy #{0}] A puzzle was made in {1} attempts.", moduleId, Timwi + 1);
                                                                                                                                                                                                       return;
                                                                                                                                                                                                     }
                                                                                                                                                                                                   }
@@ -256,8 +257,11 @@ public class Telepathy : MonoBehaviour {
           for (int Piss = 0; Piss < 4; Piss++)
             if (Weed[Piss].ToString() != i.ToString())
               Crack += Weed[Piss].ToString();
-          if (Grid[UsedSymbols[int.Parse(Crack[0].ToString())] / 18][UsedSymbols[int.Parse(Crack[1].ToString())] % 18] / 10 == Answer / 10 && Grid[UsedSymbols[int.Parse(Crack[2].ToString())] / 18][UsedSymbols[int.Parse(Crack[2].ToString())] % 18] % 10 == Answer % 10)
+          if (Grid[UsedSymbols[int.Parse(Crack[0].ToString())] / 18][UsedSymbols[int.Parse(Crack[1].ToString())] % 18] / 10 == Answer / 10
+          && Grid[UsedSymbols[int.Parse(Crack[2].ToString())] / 18][UsedSymbols[int.Parse(Crack[2].ToString())] % 18] % 10 == Answer % 10) {
+            Debug.LogFormat("[Telepathy #{0}] Submitting a {1} {2} is correct.", moduleId, ColorsForLogging[Answer / 10 - 1], SymbolsForLogging[Answer % 10 - 1]);
             return true;
+          }
         }
       return false;
     }
@@ -273,7 +277,7 @@ public class Telepathy : MonoBehaviour {
             Crack += Weed[Piss].ToString();
         if (Grid[UsedSymbols[int.Parse(Crack[0].ToString())] / 18][UsedSymbols[int.Parse(Crack[1].ToString())] % 18] % 10 == Answer % 10 &&
         Grid[UsedSymbols[int.Parse(Crack[2].ToString())] / 18][UsedSymbols[int.Parse(Crack[2].ToString())] % 18] / 10 == Answer / 10) {
-          Debug.LogFormat("[Telepathy #{0}] Submitting a {1} {2} is correct.", moduleId, ColorsForLogging[Answer % 10 - 1], SymbolsForLogging[Answer / 10 - 1]);
+          Debug.LogFormat("[Telepathy #{0}] Submitting a {1} {2} is correct.", moduleId, ColorsForLogging[Answer / 10 - 1], SymbolsForLogging[Answer % 10 - 1]);
           return true;
         }
       }
@@ -362,7 +366,7 @@ public class Telepathy : MonoBehaviour {
         else {
           yield return "sendtochaterror Speak bitch, I can't read your mind!";
           yield break;
-        } 
+        }
         #endregion
         if (Parameters[1] == "BOLT" || Parameters[1] == "LIGHTNING_BOLT" || Parameters[1] == "LIGHTNING")
           while (Index != 0) {
@@ -415,4 +419,8 @@ public class Telepathy : MonoBehaviour {
         }
       }
     }
+
+    //IEnumerator TwitchHandleForcedSolve () {
+
+    //}
 }
