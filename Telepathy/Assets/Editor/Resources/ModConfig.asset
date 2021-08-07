@@ -14,11 +14,12 @@ MonoBehaviour:
   id: Telepathy
   title: Telepathy
   author: me
-  description: "You already knew what this flavor text was.\r\n\nMod idea by Grunkle
-    Squeaky.\n\nThanks to Username, Blan, and Grunkle for data entry support.\n\nManual
-    can be found at ktane.timwi.de or in the manuals folder of your game.\n\nIf there
-    are any bugs, contact Fartlicker777#9169 on Discord.\r\n\nSound effect from KingBranBran's
-    Visual Impairment."
+  description: "You already knew what this flavor text was.\r\n\nFind the coordinate
+    that shares exactly one characteristic with all other coordinates.\n\nMod idea
+    by Grunkle Squeaky.\n\nThanks to Username, Blan, and Grunkle for data entry support.\n\nSound
+    effect from KingBranBran's Visual Impairment.\n\nManual can be found at ktane.timwi.de
+    or in the manuals folder of your game.\n\nIf there are any bugs, contact Fartlicker777#9169
+    on Discord.\r"
   version: 
   outputFolder: build
   previewImage: {fileID: 2800000, guid: d94e1b6a2576a884a97a3e21f88ac57e, type: 3}
