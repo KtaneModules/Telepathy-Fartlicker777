@@ -265,6 +265,7 @@ public class Telepathy : MonoBehaviour {
                   moduleSolved = true;
                }
                else {
+                  Debug.LogFormat("[Telepathy #{0}] No valid solution could be found with {1} {2} (at least with respect to {3}). The computer strikes you. With a bat.", moduleId, ColorsForLogging[((ColorIndex + 1) * 10 + Index + 1) % 10 - 1], SymbolsForLogging[((ColorIndex + 1) * 10 + Index + 1) / 10 - 1], Coordinates[i].text);
                   GetComponent<KMBombModule>().HandleStrike();
                }
             }
@@ -274,6 +275,7 @@ public class Telepathy : MonoBehaviour {
                   moduleSolved = true;
                }
                else {
+                  Debug.LogFormat("[Telepathy #{0}] No valid solution could be found with {1} {2} (at least with respect to {3}). The computer strikes you. With a bat.", moduleId, ColorsForLogging[((ColorIndex + 1) * 10 + Index + 1) % 10 - 1], SymbolsForLogging[((ColorIndex + 1) * 10 + Index + 1) / 10 - 1], Coordinates[i].text);
                   GetComponent<KMBombModule>().HandleStrike();
                }
             }
